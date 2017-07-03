@@ -1,14 +1,3 @@
-
-# board2 = [['1', '2', '3', '4', '5', '6', '7', '8', '9'],
-#           ['1','2','3','4','5','6','7','8','9'],
-#           ['1','2','3','4','5','6','7','8','9'],
-#           ['1','2','3','4','5','6','7','8','9'],
-#           ['1','2','3','4','5','6','7','8','9'],
-#           ['1','2','3','4','5','6','7','8','9'],
-#           ['1','2','3','4','5','6','7','8','9'],
-#           ['1','2','3','4','5','6','7','8','9'],
-#           ['1','2','3','4','5','6','7','8','9'], ]
-
 board = [".87654321",
          "2........",
          "3........",
@@ -21,22 +10,22 @@ board = [".87654321",
 
 
 def isValidSudoku():
-    board2 = list(map(list, board))
+    b = list(map(list, board))
     vals = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}
 
     rows = [[] for c in range(0, 9)]
     cols = [[] for a in range(0, 9)]
     houses = [[] for b in range(0, 9)]
 
-    for i in range(0, len(board2)):
-        for j in range(0, len(board2[0])):
-            if board2[i][j] != '.':
-                rows[i].append(board2[i][j])
-                cols[j].append(board2[i][j])
+    for i in range(0, len(b)):
+        for j in range(0, len(b[0])):
+            if b[i][j] != '.':
+                rows[i].append(b[i][j])
+                cols[j].append(b[i][j])
 
                 x = i // 3
                 y = j // 3
-                houses[x * 3 + y].append(board2[i][j])
+                houses[x * 3 + y].append(b[i][j])
 
     # Check each row for duplicate numbers
     for r in rows:
