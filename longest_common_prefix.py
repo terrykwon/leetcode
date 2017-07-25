@@ -5,7 +5,7 @@ class Solution(object):
         i.e.) All strings in the array must contain the prefix.
         
         Time complexity:    O(N * L), where N is the number of strings and L is the maximum length.
-        Space complexity:   O(L), where L is the maximum length of the prefix.
+        Space complexity:   O(1), since one character at a time is compared.
         
         :type strs: List[str]
         :rtype: str
