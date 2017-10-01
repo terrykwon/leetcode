@@ -1,6 +1,3 @@
-import copy
-
-
 class Solution(object):
     def permute(self, nums):
         """
@@ -21,6 +18,7 @@ class Solution(object):
                 results.append([i] + t)
 
         return results
+
 
 sol = Solution()
 
