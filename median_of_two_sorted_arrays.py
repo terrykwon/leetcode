@@ -45,11 +45,40 @@ class Solution(object):
         print(combined)
         return median
 
+    def findMedianSortedArrays2(self, nums1, nums2):
+        # A recursive solution
+        if len(nums1) + len(nums2) == 0:
+            return None
+
+        if len(nums1) + len(nums2) == 1:
+            # Return median of these numbers
+            return (nums1 + nums2)[0]
+
+        if len(nums1) + len(nums2) == 2:
+            return ((nums1 + nums2)[0] + (nums1 + nums2)[1]) / 2
+
+        if len(nums1) + len(nums2) == 3:
+            return sorted(nums1 + nums2)[1]
+
+        if len(nums1) + len(nums2) == 4:
+            arr = sorted(nums1 + nums2)
+            return (arr[1] + arr[2]) / 2
+
+        med1 = len(nums1) // 2
+        med2 = len(nums2) // 2
+
+        if nums1[med1] > nums2[med2]:
+            return self.findMedianSortedArrays2(nums1[:med1], nums2[med2:])
+        else:
+            return self.findMedianSortedArrays2(nums1[med1:], nums2[:med2])
+
+
+
 
 s = Solution()
 
-arr1 = [1, 2, 3, 4]
-arr2 = []
+arr1 = [1, 2]
+arr2 = [4, 5, 6, 7, 11, 13, 15]
 
 print(sorted(arr1 + arr2))
-print(s.findMedianSortedArrays(arr1, arr2))
+print(s.findMedianSortedArrays2(arr1, arr2))
