@@ -18,6 +18,9 @@ class Solution(object):
         Given a digit string, return all possible letter combinations that the number could represent.
 
         A mapping of digit to letters (just like on the telephone buttons) is given below.
+
+        Time complexity: O(3^N), where N is the number of digits (roughly, since some digits have 4 characters).
+        Space complexity: O(N * 3^N)
         
         :type digits: str
         :rtype: List[str]
